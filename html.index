@@ -2,14 +2,14 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<title>The Ultimate Adult Puzzle & Mandala Book</title>
+<title>THE ULTIMATE ADULT PUZZLE & MANDALA BOOK</title>
 <style>
     @page {
         size: A4 portrait;
-        margin: 20mm 15mm 20mm 20mm; /* هامش التجليد من اليمين */
+        margin: 15mm 15mm 15mm 15mm;
     }
     body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-family: Arial, sans-serif;
         color: #111;
         background-color: #fff;
         margin: 0;
@@ -17,14 +17,14 @@
     }
     .page {
         page-break-after: always;
-        height: 95vh;
+        height: 94vh;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        border: 1px solid #eee;
+        border: 1px solid #ddd;
         padding: 20px;
         box-sizing: border-box;
-        position: relative;
+        margin-bottom: 20px;
     }
     .header-bar {
         display: flex;
@@ -32,59 +32,77 @@
         border-bottom: 2px solid #000;
         padding-bottom: 8px;
         font-weight: bold;
-        font-size: 14pt;
+        font-size: 13pt;
     }
     .title-block {
         text-align: center;
-        margin-top: 15px;
+        margin-top: 10px;
     }
     .title-block h2 {
         margin: 0;
         font-size: 18pt;
-        letter-spacing: 1px;
     }
     .instructions {
         font-size: 11pt;
-        color: #444;
+        color: #333;
         margin: 15px 0;
-        line-height: 1.5;
-        background: #f9f9f9;
-        padding: 10px;
+        line-height: 1.6;
+        background: #f8f8f8;
+        padding: 10px 15px;
         border-right: 4px solid #000;
     }
     .workspace {
         flex-grow: 1;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin: 20px 0;
+        margin: 15px 0;
     }
     .footer-block {
         border-top: 1px dashed #666;
         padding-top: 10px;
-        font-size: 11pt;
+        font-size: 10.5pt;
     }
     
-    /* تصميم الشبكات والألغاز */
-    .grid-sudoku {
+    /* شبكة السودوكو */
+    .sudoku-table {
         border-collapse: collapse;
+        border: 2px solid #000;
         margin: auto;
     }
-    .grid-sudoku td {
-        width: 40px;
-        height: 40px;
-        border: 1px solid #666;
+    .sudoku-table td {
+        width: 38px;
+        height: 38px;
+        border: 1px solid #888;
         text-align: center;
-        font-size: 16pt;
+        font-size: 14pt;
         font-weight: bold;
     }
-    .grid-sudoku tr:nth-child(2n) td { border-bottom: 2px solid #000; }
-    .grid-sudoku td:nth-child(3n) { border-left: 2px solid #000; }
+    .b-right { border-left: 2px solid #000 !important; }
+    .b-bottom { border-bottom: 2px solid #000 !important; }
 
-    /* أشكال الماندالا (متجهات Line Art للطباعة) */
+    /* ماندالا متجهة للطباعة */
     .mandala-svg {
-        width: 320px;
-        height: 320px;
+        width: 300px;
+        height: 300px;
+    }
+
+    /* جدول الحلول */
+    .answers-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+    }
+    .answers-table th, .answers-table td {
+        border: 1px solid #666;
+        padding: 8px;
+        font-size: 10pt;
+        text-align: right;
+    }
+    .answers-table th {
+        background-color: #2c3e50;
+        color: #fff;
     }
 </style>
 </head>
@@ -92,8 +110,8 @@
 
 <!-- صفحة الغلاف -->
 <div class="page" style="background: #111; color: #fff; text-align: center; justify-content: center;">
-    <h1 style="font-size: 28pt; letter-spacing: 2px; margin-bottom: 10px;">THE ULTIMATE ADULT PUZZLE</h1>
-    <h3 style="font-size: 18pt; color: #ccc; font-weight: 300;">& MANDALA BOOK</h3>
+    <h1 style="font-size: 26pt; letter-spacing: 2px; margin-bottom: 10px; color: #fff;">THE ULTIMATE ADULT PUZZLE</h1>
+    <h3 style="font-size: 16pt; color: #ccc; font-weight: 300; margin-top: 0;">& MANDALA BOOK</h3>
     <div style="margin: 40px 0;">
         <svg class="mandala-svg" viewBox="0 0 100 100" style="stroke: #fff; fill: none; stroke-width: 0.8;">
             <circle cx="50" cy="50" r="45"/>
@@ -102,42 +120,42 @@
             <polygon points="50,15 60,35 85,35 65,50 75,75 50,60 25,75 35,50 15,35 40,35"/>
         </svg>
     </div>
-    <p style="font-size: 12pt; letter-spacing: 3px; color: #aaa;">200 PUZZLES • BRAIN GAMES • RELAXING MANDALAS</p>
+    <p style="font-size: 11pt; letter-spacing: 2px; color: #aaa;">200 PUZZLES • BRAIN GAMES • RELAXING MANDALAS</p>
 </div>
 
 <!-- PAGE 001 -->
 <div class="page">
     <div class="header-bar">
         <span>PUZZLE [001]</span>
-        <span>صعوبة: ★☆☆☆☆</span>
+        <span>الصعوبة: ★☆☆☆☆</span>
     </div>
     <div class="title-block">
         <h2>The Executive Desk</h2>
     </div>
     <div class="instructions">
-        حدد الترتيب الصحيح من اليسار إلى اليمين للأغراض الأربعة الموجودة على المكتب بناءً على المعطيات التالية:
+        حدد الترتيب الصحيح للأغراض الأربعة الموجودة على المكتب من اليسار إلى اليمين بناءً على المعطيات التالية:
     </div>
-    <div class="workspace" style="flex-direction: column; align-items: flex-start; padding: 0 40px;">
+    <div class="workspace" style="align-items: flex-start; padding: 0 30px;">
         <p>1. دفتر الملاحظات يقع مباشرة على يسار كوب القهوة.</p>
         <p>2. حامل الأقلام يقع على يمين كوب القهوة.</p>
         <p>3. مصباح المكتب يقع في أقصى اليسار.</p>
     </div>
     <div class="footer-block">
-        <strong>الإجابة:</strong> __________________________________________________
+        <strong>حقل الإجابة:</strong> [ ______________ | ______________ | ______________ | ______________ ]
     </div>
 </div>
 
 <!-- PAGE 002 -->
 <div class="page">
     <div class="header-bar">
-        <span>PUZZLE [002]</span>
-        <span>صعوبة: ★☆☆☆☆</span>
+        <span>PAGE [002]</span>
+        <span>تأمل وتلوين</span>
     </div>
     <div class="title-block">
         <h2>Sunflower Harmony</h2>
     </div>
     <div class="instructions">
-        خذ قسطًا من الراحة وقم بتلوين هذا النمط الهندسي المتناظر لتصفية الذهن.
+        خذ قسطًا من الراحة وقم بتلوين هذا النمط الهندسي المتناظر لتصفية الذهن وتغذية الجانب النفسي.
     </div>
     <div class="workspace">
         <svg class="mandala-svg" viewBox="0 0 100 100" style="stroke: #000; fill: none; stroke-width: 1;">
@@ -149,8 +167,8 @@
             <path d="M50 50 Q70 60 90 50 Q70 40 50 50 Z"/>
         </svg>
     </div>
-    <div class="footer-block" style="text-align: center; border: none; color: #888;">
-        ملاحظة: يمكنك استخدام أقلام التلوين الدقيقة (Fine-liner).
+    <div class="footer-block" style="text-align: center; border: none; color: #777;">
+        استخدم أقلام التلوين الدقيقة (Fine-liner) للحصول على أفضل نتيجة.
     </div>
 </div>
 
@@ -158,26 +176,95 @@
 <div class="page">
     <div class="header-bar">
         <span>PUZZLE [004]</span>
-        <span>صعوبة: ★☆☆☆☆</span>
+        <span>الصعوبة: ★☆☆☆☆</span>
     </div>
     <div class="title-block">
         <h2>6x6 Mini Sudoku</h2>
     </div>
     <div class="instructions">
-        املأ الشبكة بحيث يحتوي كل صف وكل عمود وكل مربع (2×3) على الأرقام من 1 إلى 6 دون تكرار.
+        املأ الشبكة بحيث يحتوي كل صف، وكل عمود، وكل منطقة (2×3) على الأرقام من 1 إلى 6 دون تكرار:
     </div>
     <div class="workspace">
-        <table class="grid-sudoku">
-            <tr><td>1</td><td></td><td>3</td><td></td><td>5</td><td></td></tr>
-            <tr><td></td><td>5</td><td></td><td>2</td><td></td><td>4</td></tr>
-            <tr><td>2</td><td></td><td>4</td><td></td><td>6</td><td></td></tr>
-            <tr><td></td><td>6</td><td></td><td>1</td><td></td><td>3</td></tr>
-            <tr><td>3</td><td></td><td>5</td><td></td><td>1</td><td></td></tr>
-            <tr><td></td><td>4</td><td></td><td>6</td><td></td><td>2</td></tr>
+        <table class="sudoku-table">
+            <tr><td>1</td><td></td><td class="b-right">3</td><td></td><td>5</td><td></td></tr>
+            <tr class="b-bottom"><td></td><td>5</td><td class="b-right"></td><td>2</td><td></td><td>4</td></tr>
+            <tr><td>2</td><td></td><td class="b-right">4</td><td></td><td>6</td><td></td></tr>
+            <tr class="b-bottom"><td></td><td>6</td><td class="b-right"></td><td>1</td><td></td><td>3</td></tr>
+            <tr><td>3</td><td></td><td class="b-right">5</td><td></td><td>1</td><td></td></tr>
+            <tr><td></td><td>4</td><td class="b-right"></td><td>6</td><td></td><td>2</td></tr>
         </table>
     </div>
     <div class="footer-block">
         <strong>الوقت المستغرق:</strong> ________ دقيقة
+    </div>
+</div>
+
+<!-- PAGE 018 -->
+<div class="page">
+    <div class="header-bar">
+        <span>PUZZLE [018]</span>
+        <span>الصعوبة: ★★☆☆☆</span>
+    </div>
+    <div class="title-block">
+        <h2>Cryptogram (فك التشفير)</h2>
+    </div>
+    <div class="instructions">
+        قم بفك تشفير المقولة التالية باستخدام شفرة التعويض الأبجدي (كل حرف مشفر يمثل حرفاً ثابتاً):
+    </div>
+    <div class="workspace">
+        <p style="font-family: monospace; font-size: 16pt; letter-spacing: 3px; text-align: center;">
+            "IRFXV LV WKH NHD WR PDVWHUB."
+        </p>
+    </div>
+    <div class="footer-block">
+        <strong>المقولة المترجمة:</strong> __________________________________________________
+    </div>
+</div>
+
+<!-- PAGE 200 (دليل الحلول) -->
+<div class="page">
+    <div class="header-bar">
+        <span>ANSWER KEY</span>
+        <span>دليل الحلول الشامل</span>
+    </div>
+    <div class="title-block">
+        <h2>Master Answer Key</h2>
+    </div>
+    <div class="workspace" style="justify-content: flex-start; width: 100%;">
+        <table class="answers-table">
+            <thead>
+                <tr>
+                    <th style="width: 20%;">الصفحة</th>
+                    <th style="width: 30%;">اسم اللغز</th>
+                    <th>الحل النموذجي</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Page 001</td>
+                    <td>Executive Desk</td>
+                    <td>مصباح المكتب، دفتر الملاحظات، كوب القهوة، حامل الأقلام.</td>
+                </tr>
+                <tr>
+                    <td>Page 004</td>
+                    <td>6x6 Sudoku</td>
+                    <td>الصف 1: [1,2,3,4,5,6] | الصف 2: [6,5,1,2,3,4] | الصف 3: [2,1,4,3,6,5]</td>
+                </tr>
+                <tr>
+                    <td>Page 018</td>
+                    <td>Cryptogram</td>
+                    <td>"FOCUS IS THE KEY TO MASTERY." (شفرة إزاحة +3)</td>
+                </tr>
+                <tr>
+                    <td>Page 034</td>
+                    <td>Balancing Scale</td>
+                    <td>وزن المربع = 6 كجم</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="footer-block" style="text-align: center;">
+        نهاية الكتاب - The Ultimate Adult Puzzle & Mandala Book
     </div>
 </div>
 
